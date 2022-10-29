@@ -23,6 +23,15 @@ public class House extends Building {
   public void moveIn(String name) { 
     residents.add(name); 
   }
+  
+  public String moveOut(String name) { 
+    residents.remove(name); 
+    return name; 
+  }
+
+  public boolean isResident(String person) { 
+    return residents.contains(person); 
+  }
 
   public static void main(String[] args) {
     ArrayList<String> lamontResidents = new ArrayList<String>(); 
@@ -36,6 +45,9 @@ public class House extends Building {
 
     lamontHouse.moveIn("Jared");
     System.out.println(lamontResidents.get(1));
+
+    System.out.println(lamontHouse.moveOut("Jared"));
+    System.out.println(lamontHouse.isResident("Jared"));
 
   }
 
