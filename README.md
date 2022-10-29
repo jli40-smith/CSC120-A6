@@ -1,13 +1,5 @@
-# CSC120-A6: Use What Your Parent (Class) Gave You
-
-## Outline
-In this assignment (Part I of a two-week assignment), we'll explore how to use [**Inheritance**](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)) to write _parsimonious_ programs. 
 
 We'll start with a simple class representing a generic `Building` (`Building.java`):
-
-<img src="https://cdn-icons-png.flaticon.com/512/1324/1324872.png" alt="Building icon created by Freepik - Flaticon" width="200"/>
-
-There is nothing special about this `Building`. It doesn't have any specific purpose, but it does have the minimal attributes you'd expect a building to have (pre-filled with some not-so-useful default values):
 
 ```
 private String name = "<Name Unknown>";
@@ -35,9 +27,6 @@ Like any good `class`, the `Building` class also has an overridden `toString()` 
 ## Phase 1: the `House` class
 A `House` is a specific type of `Building`:
 
-<img src="https://cdn-icons-png.flaticon.com/512/738/738822.png" alt="House icon created by Freepik - Flaticon" width="200"/>
-
-In addition to all the features it has by virtue of being a `Building`, it is also a place where students live, work, and sometimes eat (if the `House` has a dining room). In this phase, your task is to expand on the stub contained in `House.java`, which is reproduced in its entirety below:
 ```
 /* This is a stub for the House class */
 public class House {
@@ -58,13 +47,13 @@ by doing the following:
 private ArrayList<String> residents; // The <String> tells Java what kind of data we plan to store IN the ArrayList
 private boolean hasDiningRoom;
 ```
-Modify the `House` **constructor** to initialize `residents` to a `new ArrayList<String>()`, as well as to set `hasDiningRoom` to indicate whether or not the house has a dining room. You'll have to pass this value in as a parameter to the constructor, and don't forget to `import java.util.ArrayList`!
+Modify the `House` **constructor** to initialize `residents` to a `new ArrayList<String>()`, as well as to set `hasDiningRoom` to indicate whether or not the house has a dining room. You'll have to pass this value in as a parameter to the constructor
 
 ---
 2. Write the following accessors to retrieve the indicated values:
 ```
 public boolean hasDiningRoom();
-public boolean nResidents();
+public int nResidents();
 ```
 
 ---
