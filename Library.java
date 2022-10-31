@@ -1,12 +1,21 @@
-/* This is a stub for the Library class */
-public class Library {
+import java.util.Hashtable;
 
-    public Library() {
-      System.out.println("You have built a library: 📖");
+public class Library extends Building {
+
+    private Hashtable<String, Boolean> collection;  
+
+    public Library(String name, String address, int nFloors, Hashtable<String, Boolean> collection) {
+      super(name, address, nFloors);
+      this.collection = collection; 
+
+      System.out.println("You have built a library");
     }
   
     public static void main(String[] args) {
-      new Library();
+      
+      Hashtable<String, Boolean> collection = new Hashtable<String, Boolean>();
+
+      new Library("Neilson Library", "Neilson Drive", 4, collection);
     }
   
   }

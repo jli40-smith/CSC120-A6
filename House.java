@@ -6,9 +6,12 @@ public class House extends Building {
   private ArrayList<String> residents;  
 
   public House(String name, String address, int nFloors, boolean hasDiningRoom, ArrayList<String> residents) {
+    
     super(name, address, nFloors);
     this.hasDining = hasDiningRoom; 
-    this.residents = residents; 
+    this.residents = residents;
+
+    System.out.println("You have built a house");
   }
 
   
