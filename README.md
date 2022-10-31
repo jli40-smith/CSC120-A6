@@ -69,9 +69,6 @@ public boolean isResident(String person);
 _Hint: use the functions provided by the [`ArrayList`](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html) class to make this much easier! Specifically, check out `add(...)`, `remove(...)`, and `contains(...)`._
 
 ## Phase 2: the `Library` class
-A `Library` is an altogether different kind of building:
-
-<img src="https://cdn-icons-png.flaticon.com/512/1596/1596485.png" alt="Library icon created by Freepik - Flaticon" width="200"/>
 
 In this phase, your task is to expand on the stub contained in `Library.java`. A `Library` doesn't have any `residents` (nor do we have to worry about a dining room), but it does have a `collection` (of titles) which we'll store in another data structure called a `HashTable`:
 ```
@@ -106,8 +103,6 @@ _Hint: again, let HashTable's methods do some of the heavy lifting for you!_
 
 ## Phase 3: The `Cafe` class
 Finally, my personal favorite type of building within walking distance of any college campus, the `Cafe`:
-
-<img src="https://cdn-icons-png.flaticon.com/512/1839/1839053.png" alt="Cafe icon created by Freepik - Flaticon" width="200"/>
 
 Unlike the `House` and the `Library`, the `Cafe` doesn't need to keep track of a large number of individual things. Instead, it needs to keep track of its inventory, which in this simplified world is just three ingredients and the cups to put them in:
 
