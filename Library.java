@@ -43,7 +43,7 @@ public class Library extends Building {
     }
 
     public void printCollection() {
-      Set<String> allTitles = collection.keySet(); 
+      Set<String> allTitles = collection.keySet(); //Source [1]
 
       System.out.println("********Library Catalog********");
       
