@@ -30,9 +30,9 @@ Listed below are various aspects of the assignment.  When you turn in your work,
 
 ### Level 3: `Cafe.java` (3 pts)
 
-_____ 1 pt: The `Cafe` class includes the requested attributes
+**YES** 1 pt: The `Cafe` class includes the requested attributes
 
-_____ 1 pt: The `Cafe` class keeps the inventory up to date, based on sales
+**YES** 1 pt: The `Cafe` class keeps the inventory up to date, based on sales
 
 _____ 1 pt: The `Cafe` class uses the `restock(...)` method to avoid running out of inventory.
 
