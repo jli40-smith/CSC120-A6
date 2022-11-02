@@ -1,6 +1,13 @@
 import java.util.Hashtable;
 import java.util.Set;
 
+/**
+ * A Building which tracks a collection of book titles and author 
+ * infomation along with each book's availability status
+ * 
+ * @author Joanna Li 
+ * @version 11/02/2022
+ */
 public class Library extends Building {
 
     private Hashtable<String, Boolean> collection;
