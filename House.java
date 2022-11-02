@@ -30,7 +30,6 @@ public class House extends Building {
   
   /**
    * Checks if a house has a dining room
-   * 
    * @return boolean indicating if the house has a dining room 
    */
   public boolean hasDiningRoom() {
@@ -39,7 +38,6 @@ public class House extends Building {
 
   /** 
    * Returns the number of residents living in the house
-   * 
    * @return int number of residents living in the house
    */
   public int nResidents() { 
@@ -47,7 +45,6 @@ public class House extends Building {
   }
   /** 
    * Adds a resident to the house 
-   * 
    * @param name String name of the resident moving in 
    */
   public void moveIn(String name) { 
@@ -56,7 +53,6 @@ public class House extends Building {
   
   /** 
    * Removes a resident from the house 
-   * 
    * @param name String name of the resident moving out 
    */
   public String moveOut(String name) { 
@@ -66,7 +62,7 @@ public class House extends Building {
 
   /** 
    * Checks if a person is a resident of the house
-   * 
+   *
    * @param person String name of the person to check for in the house
    * @return boolean indicating if the person is a resident of the house 
    */

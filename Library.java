@@ -28,7 +28,6 @@ public class Library extends Building {
   
     /**
      * Adds a book to the library 
-     * 
      * @param title String with the title and author of the book to be added 
      */
     public void addTitle(String title) {
@@ -51,7 +50,6 @@ public class Library extends Building {
 
     /**
      * Changes the availability status of a book to false and checks it out 
-     * 
      * @param title String with the title and author of the book to check out 
      */
     public void checkOut(String title) {
@@ -61,7 +59,6 @@ public class Library extends Building {
     
     /** 
      * Changes the availability status o a book to true and returns it to the collection
-     * 
      * @param title String with the title and author of the book to return 
      */
     public void returnBook(String title) {
