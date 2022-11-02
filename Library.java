@@ -12,6 +12,13 @@ public class Library extends Building {
 
     private Hashtable<String, Boolean> collection;
 
+    /**
+     * Constructs a Library
+     * 
+     * @param name String name of the library
+     * @param address String street address of the library 
+     * @param nFloors int number of floors in the Library 
+     */
     public Library(String name, String address, int nFloors) {
       super(name, address, nFloors);
       collection = new Hashtable<String, Boolean>();
@@ -19,36 +26,72 @@ public class Library extends Building {
       System.out.println("You have built a library");
     }
   
+    /**
+     * Adds a book to the library 
+     * 
+     * @param title String with the title and author of the book to be added 
+     */
     public void addTitle(String title) {
       collection.put(title, true);
       System.out.println("You have added " + title + " to the collection");
 
     }
 
+    /** 
+     * Removes a book from the library
+     * 
+     * @param title String with the title and author of the book to be removed
+     * @return String with the title and author of the book that was removed
+     */
     public String removeTitle(String title) {
       collection.remove(title);
       System.out.println("You have removed " + title + " from the collection");
       return title;
     }
 
+    /**
+     * Changes the availability status of a book to false and checks it out 
+     * 
+     * @param title String with the title and author of the book to check out 
+     */
     public void checkOut(String title) {
       collection.replace(title, true, false);
       System.out.println("You have checked out " + title);
     }
     
+    /** 
+     * Changes the availability status o a book to true and returns it to the collection
+     * 
+     * @param title String with the title and author of the book to return 
+     */
     public void returnBook(String title) {
       collection.replace(title, false, true);
       System.out.println("You have returned " + title);
     }
 
+    /** 
+     * Checks if a book is in the collection  
+     * 
+     * @param title String with title and author of the book to check for
+     * @return boolean indicating if the book is in the collection 
+     */
     public boolean containsTitle(String title) {
       return collection.containsKey(title);
     }
 
+    /** 
+     * Checks if a book's availability status is true
+     * 
+     * @param title String with title and author of the book to check for availability 
+     * @return boolean indicating if the book is available 
+     */
     public boolean isAvailable(String title) {
       return collection.get(title);
     }
-
+    
+    /** 
+     * Prints out the books in the library with their availability status 
+     */
     public void printCollection() {
       Set<String> allTitles = collection.keySet(); //Source [1]
 
@@ -67,7 +110,11 @@ public class Library extends Building {
       System.out.println("*******************************");
       }
     }
-
+    
+    /**
+     * Main method for testing Library methods
+     * @param args String array with command-line arguments
+     */
     public static void main(String[] args) {
 
       Library neilsonLibrary = new Library("Neilson Library", "Neilson Drive", 4);
