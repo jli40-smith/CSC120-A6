@@ -65,6 +65,10 @@ public class Cafe extends Building {
         this.nCups += nCups;
     }
     
+    /**
+     * Main method for testing Cafe methods
+     * @param args String array with command-line arguments
+     */
     public static void main(String[] args) {
         Cafe compassCafe = new Cafe("Compass Cafe", "Neilson Drive", 1, 10, 10, 10, 10);
         System.out.println(compassCafe.nCups);
