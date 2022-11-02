@@ -24,12 +24,12 @@ public class Library extends Building {
       return title;
     }
 
-    public void checkOutTitle(String title) {
+    public void checkOut(String title) {
       collection.replace(title, true, false);
       System.out.println("You have checked out " + title);
     }
     
-    public void returnTitle(String title) {
+    public void returnBook(String title) {
       collection.replace(title, false, true);
       System.out.println("You have returned " + title);
     }
@@ -46,14 +46,15 @@ public class Library extends Building {
       Set<String> allTitles = collection.keySet(); //Source [1]
 
       System.out.println("********Library Catalog********");
-      
+
       for (String title : allTitles) {
         System.out.println("Title and Author: " + title);
         System.out.print("Status: ");
 
         if (!collection.get(title)) {
           System.out.println("Checked out");
-        } else {System.out.println("Available");
+        } else {
+          System.out.println("Available");
         }
 
       System.out.println("*******************************");
@@ -69,11 +70,11 @@ public class Library extends Building {
       System.out.println(neilsonLibrary.containsTitle("The Wealth of Nations by Adam Smith"));
 
       //Check out the book and verify that it worked
-      neilsonLibrary.checkOutTitle("The Wealth of Nations by Adam Smith");
+      neilsonLibrary.checkOut("The Wealth of Nations by Adam Smith");
       System.out.println(neilsonLibrary.isAvailable("The Wealth of Nations by Adam Smith"));
 
       //Return the book and verify that it worked
-      neilsonLibrary.returnTitle("The Wealth of Nations by Adam Smith");
+      neilsonLibrary.returnBook("The Wealth of Nations by Adam Smith");
       System.out.println(neilsonLibrary.isAvailable("The Wealth of Nations by Adam Smith"));
 
       //Remove the book and verify that it worked
@@ -84,7 +85,7 @@ public class Library extends Building {
       neilsonLibrary.addTitle("The Social Contract by Jean-Jacques Rousseau");
       neilsonLibrary.addTitle("Anarchy, State, and Utopia by Robert Nozick");
 
-      neilsonLibrary.checkOutTitle("Anarchy, State, and Utopia by Robert Nozick");
+      neilsonLibrary.checkOut("Anarchy, State, and Utopia by Robert Nozick");
 
       //Print the collection
       neilsonLibrary.printCollection();
