@@ -5,12 +5,11 @@ public class House extends Building {
   private  boolean hasDining;
   private ArrayList<String> residents;
 
-  public House(String name, String address, int nFloors, boolean hasDiningRoom, ArrayList<String> residents) {
+  public House(String name, String address, int nFloors, boolean hasDiningRoom) {
     
     super(name, address, nFloors);
- 
+    residents = new ArrayList<String>();
     this.hasDining = hasDiningRoom;
-    this.residents = residents;
 
     System.out.println("You have built a house");
   }
@@ -38,13 +37,13 @@ public class House extends Building {
   }
 
   public static void main(String[] args) {
-    ArrayList<String> lamontResidents = new ArrayList<String>(); 
-    lamontResidents.add("Jenny");
 
-    House lamontHouse = new House("Lamont", "Prospect Street", 3, true, lamontResidents);
+    House lamontHouse = new House("Lamont", "Prospect Street", 3, true);
 
     System.out.println(lamontHouse);
     System.out.println(lamontHouse.hasDiningRoom());
+    
+    lamontHouse.moveIn("Jenny");
     System.out.println(lamontHouse.nResidents());
 
     lamontHouse.moveIn("Jared");

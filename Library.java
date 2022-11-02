@@ -5,11 +5,9 @@ public class Library extends Building {
 
     private Hashtable<String, Boolean> collection;
 
-    public Library(String name, String address, int nFloors, Hashtable<String, Boolean> collection) {
+    public Library(String name, String address, int nFloors) {
       super(name, address, nFloors);
-
       collection = new Hashtable<String, Boolean>();
-      this.collection = collection;
 
       System.out.println("You have built a library");
     }
@@ -64,7 +62,7 @@ public class Library extends Building {
 
     public static void main(String[] args) {
 
-      Library neilsonLibrary = new Library("Neilson Library", "Neilson Drive", 4, new Hashtable<String, Boolean>());
+      Library neilsonLibrary = new Library("Neilson Library", "Neilson Drive", 4);
       
       //Add a book and verify that it worked
       neilsonLibrary.addTitle("The Wealth of Nations by Adam Smith");
