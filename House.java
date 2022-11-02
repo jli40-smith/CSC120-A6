@@ -8,8 +8,7 @@ public class House extends Building {
   public House(String name, String address, int nFloors, boolean hasDiningRoom, ArrayList<String> residents) {
     
     super(name, address, nFloors);
-
-    //residents = new ArrayList<String>(); 
+ 
     this.hasDining = hasDiningRoom;
     this.residents = residents;
 
