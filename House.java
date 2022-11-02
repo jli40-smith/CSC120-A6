@@ -3,12 +3,14 @@ import java.util.ArrayList;
 public class House extends Building {
 
   private  boolean hasDining;
-  private ArrayList<String> residents;  
+  private ArrayList<String> residents;
 
   public House(String name, String address, int nFloors, boolean hasDiningRoom, ArrayList<String> residents) {
     
     super(name, address, nFloors);
-    this.hasDining = hasDiningRoom; 
+
+    //residents = new ArrayList<String>(); 
+    this.hasDining = hasDiningRoom;
     this.residents = residents;
 
     System.out.println("You have built a house");
@@ -28,8 +30,8 @@ public class House extends Building {
   }
   
   public String moveOut(String name) { 
-    residents.remove(name); 
-    return name; 
+    residents.remove(name);
+    return name;
   }
 
   public boolean isResident(String person) { 
@@ -47,7 +49,7 @@ public class House extends Building {
     System.out.println(lamontHouse.nResidents());
 
     lamontHouse.moveIn("Jared");
-    System.out.println(lamontResidents.get(1));
+    System.out.println(lamontHouse.nResidents());
 
     System.out.println(lamontHouse.moveOut("Jared"));
     System.out.println(lamontHouse.isResident("Jared"));

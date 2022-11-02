@@ -7,7 +7,9 @@ public class Library extends Building {
 
     public Library(String name, String address, int nFloors, Hashtable<String, Boolean> collection) {
       super(name, address, nFloors);
-      this.collection = collection; 
+
+      //collection = new Hashtable<String, Boolean>();
+      this.collection = collection;
 
       System.out.println("You have built a library");
     }
@@ -47,7 +49,7 @@ public class Library extends Building {
 
       System.out.println("********Library Catalog********");
       
-      for (String title : allTitles) { 
+      for (String title : allTitles) {
         System.out.println("Title and Author: " + title);
         System.out.print("Status: ");
 
@@ -64,23 +66,20 @@ public class Library extends Building {
 
       Library neilsonLibrary =  new Library("Neilson Library", "Neilson Drive", 4, new Hashtable<String, Boolean>());
       
-      //Add a book
+      //Add a book and verify that it worked
       neilsonLibrary.addTitle("The Wealth of Nations by Adam Smith");
-      //Check if book was added 
       System.out.println(neilsonLibrary.containsTitle("The Wealth of Nations by Adam Smith"));
 
-      //Check out the book 
+      //Check out the book and verify that it worked
       neilsonLibrary.checkOutTitle("The Wealth of Nations by Adam Smith");
       System.out.println(neilsonLibrary.isAvailable("The Wealth of Nations by Adam Smith"));
 
-      //Return the book 
+      //Return the book and verify that it worked
       neilsonLibrary.returnTitle("The Wealth of Nations by Adam Smith");
       System.out.println(neilsonLibrary.isAvailable("The Wealth of Nations by Adam Smith"));
 
-      //Remove the book
+      //Remove the book and verify that it worked
       neilsonLibrary.removeTitle("The Wealth of Nations by Adam Smith");
-
-      //Check if book was removed 
       System.out.println(neilsonLibrary.containsTitle("The Wealth of Nations by Adam Smith"));
 
       //Testing the printCollection() method
