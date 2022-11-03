@@ -36,27 +36,50 @@ public class Cafe extends Building {
 
     /**
      * Sells a cup of coffee and subtracts the given amounts of cups
-     *  or ingredients used from the inventory counts
+     * or ingredients used from the inventory counts
+     * and restocks inventory items that run out 
      * 
      * @param nCoffeeOunces int ounces of coffee sold
      * @param nSugarPackets int number of sugar packets sold 
      * @param nCreams int number of creams sold 
      */
     public void sellCoffee(int nCoffeeOunces, int nSugarPackets, int nCreams) {
+
         this.nCoffeeOunces -= nCoffeeOunces;
         this.nSugarPackets -= nSugarPackets;
         this.nCreams -= nCreams;
         this.nCups -= 1;
+
+        if (this.nCoffeeOunces <= 0) { 
+            System.out.println("Ran out of coffee, restocked 100 more");
+            this.restock(100, 0, 0, 0);
+        }
+        
+        if (this.nSugarPackets <= 0) { 
+            System.out.println("Ran out of sugar packets, restocked 100 more");
+            this.restock(0, 100, 0, 0);
+        }
+        
+        if (this.nCreams <= 0) { 
+            System.out.println("Ran out of creams, restocked 100 more");
+            this.restock(0, 0, 100, 0);
+        }
+
+        
+        if (this.nCups <= 0) { 
+            System.out.println("Ran out of cups, restocked 100 more");
+            this.restock(0, 0, 0, 100);
+        }
     }
 
     /**
      * Restocks the Cafe inventory by adding the given amounts 
      * of coffee ingredients and cups to the inventory counts
      * 
-     * @param nCoffeeOunces
-     * @param nSugarPackets
-     * @param nCreams
-     * @param nCups
+     * @param nCoffeeOunces int ounces of coffee to restock 
+     * @param nSugarPackets int number of sugar packets to restock 
+     * @param nCreams int number of creams to restock 
+     * @param nCups int number of cups to restock 
      */
     private void restock(int nCoffeeOunces, int nSugarPackets, int nCreams, int nCups) {
         this.nCoffeeOunces += nCoffeeOunces;
@@ -70,22 +93,21 @@ public class Cafe extends Building {
      * @param args String array with command-line arguments
      */
     public static void main(String[] args) {
-        Cafe compassCafe = new Cafe("Compass Cafe", "Neilson Drive", 1, 10, 10, 10, 10);
-        System.out.println(compassCafe.nCups);
+        Cafe compassCafe = new Cafe("Compass Cafe", "Neilson Drive", 1, 51, 0, 0, 1);
         
-        //Testing sellCoffee()
-        compassCafe.sellCoffee(4, 3, 2);
-        System.out.println(compassCafe.nCups);
-        System.out.println(compassCafe.nCoffeeOunces);
-        System.out.println(compassCafe.nSugarPackets);
-        System.out.println(compassCafe.nCreams);
-
-        //Testing restock()
-        compassCafe.restock(4, 3, 2, 1);
-        System.out.println(compassCafe.nCups);
-        System.out.println(compassCafe.nCoffeeOunces);
-        System.out.println(compassCafe.nSugarPackets);
-        System.out.println(compassCafe.nCreams);
+        //Testing sell and auto restock
+        compassCafe.sellCoffee(50, 50, 50);
+        System.out.println("Cups: " + compassCafe.nCups);
+        System.out.println("Coffee: " +compassCafe.nCoffeeOunces);
+        System.out.println("Sugar packets " +compassCafe.nSugarPackets);
+        System.out.println("Creams " +compassCafe.nCreams);
+        
+        //Test 2 for sell and auto restock
+        compassCafe.sellCoffee(10, 10, 10);
+        System.out.println("Cups: " + compassCafe.nCups);
+        System.out.println("Coffee: " +compassCafe.nCoffeeOunces);
+        System.out.println("Sugar packets " +compassCafe.nSugarPackets);
+        System.out.println("Creams " +compassCafe.nCreams);
 
     }
     
